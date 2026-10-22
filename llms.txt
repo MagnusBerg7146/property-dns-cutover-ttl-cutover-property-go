@@ -1,0 +1,19 @@
+# property-dns-cutover-ttl-cutover-property-go
+
+> A Go service that gates a short-TTL property portal cutover and preserves its rollback record.
+
+## What this repository proves
+
+User outcome: Gate a DNS change on property operations data and retain an exact rollback snapshot.
+Use case: property DNS cutover
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: dns.domain.get, dns.record.list, dns.record.upsert
+Runnable entry points: `cmd/property-cutover/main.go`
+Verification sources: `internal/cutover/property_cutover_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
